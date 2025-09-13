@@ -1,0 +1,240 @@
+/**
+ * Promotional Banner Widget Styles
+ * Matches the design from the provided image with purple theme
+ */
+
+.promo-banner-container {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(139, 76, 184, 0.1);
+    max-width: 100%;
+}
+
+.promo-banner-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    gap: 3px;
+}
+
+/* Left Image Section */
+.promo-banner-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    position: relative;
+    overflow: hidden;
+    padding: 7px;
+}
+
+.promo-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    min-height: 250px;
+}
+
+/* Right Content Section */
+.promo-banner-content {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Heading Styles */
+.promo-banner-heading {
+    color: #8B4CB8;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Description Styles */
+.promo-banner-description {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    opacity: 0.9;
+}
+
+/* Button Container */
+.promo-banner-button-wrapper {
+    margin-top: auto;
+}
+
+/* Button Styles */
+.promo-banner-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #8B4CB8;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.promo-banner-button:hover {
+    background: #7A3FA0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 76, 184, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.promo-banner-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 76, 184, 0.3);
+}
+
+/* Arrow Icon */
+.promo-banner-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.promo-banner-button:hover .promo-banner-arrow {
+    transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .promo-banner-wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .promo-banner-image {
+        flex: none;
+        max-width: 100%;
+        order: 1;
+    }
+    
+    .promo-banner-image img {
+        min-height: 200px;
+    }
+    
+    .promo-banner-content {
+        order: 2;
+        padding: 10px 10px;
+    }
+    
+    .promo-banner-heading {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .promo-banner-description {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .promo-banner-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-banner-content {
+        padding: 10px 10px;
+    }
+    
+    .promo-banner-heading {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .promo-banner-description {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .promo-banner-button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+
+/* RTL Support */
+[dir="rtl"] .promo-banner-wrapper {
+    direction: rtl;
+}
+
+[dir="rtl"] .promo-banner-image {
+    order: 2;
+}
+
+[dir="rtl"] .promo-banner-content {
+    order: 1;
+}
+
+[dir="rtl"] .promo-banner-button:hover .promo-banner-arrow {
+    transform: translateX(-3px) scaleX(-1);
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .promo-banner-container {
+        border: 2px solid #8B4CB8;
+    }
+    
+    .promo-banner-heading {
+        color: #6B2C91;
+    }
+    
+    .promo-banner-description {
+        color: #000000;
+    }
+    
+    .promo-banner-button {
+        border: 2px solid #ffffff;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .promo-banner-button,
+    .promo-banner-arrow {
+        transition: none;
+    }
+    
+    .promo-banner-button:hover {
+        transform: none;
+    }
+    
+    .promo-banner-button:hover .promo-banner-arrow {
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .promo-banner-container {
+        box-shadow: none;
+        border: 1px solid #cccccc;
+    }
+    
+    .promo-banner-button {
+        background: transparent !important;
+        color: #8B4CB8 !important;
+        border: 1px solid #8B4CB8;
+    }
+}
