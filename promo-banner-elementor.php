@@ -125,10 +125,19 @@ final class Promo_Banner_Elementor {
      * Enqueue widget styles
      */
     public function widget_styles() {
+        // Main styles
         wp_enqueue_style(
             'promo-banner-elementor-styles',
             PROMO_BANNER_ELEMENTOR_URL . 'assets/css/promo-banner.css',
             [],
+            PROMO_BANNER_ELEMENTOR_VERSION
+        );
+        
+        // Responsive styles (loaded after main styles)
+        wp_enqueue_style(
+            'promo-banner-elementor-responsive',
+            PROMO_BANNER_ELEMENTOR_URL . 'assets/css/responsive.css',
+            ['promo-banner-elementor-styles'], // Depends on main styles
             PROMO_BANNER_ELEMENTOR_VERSION
         );
     }
